@@ -10,6 +10,7 @@ const path = require('path');
  */
 
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const BabiliPlugin = require("babili-webpack-plugin");
 
 /*
  * We've enabled commonsChunkPlugin for you. This allows your app to
@@ -70,10 +71,14 @@ module.exports = {
 
 	plugins: [
 		// new ExtractTextPlugin("styles.css"),
-		new UglifyJSPlugin({
-			uglifyOptions: {
-				comparisons: false
-			}
-		})
+		// new BabiliPlugin()
+		// new UglifyJSPlugin({
+		// 	uglifyOptions: {
+		// 		compress: {
+		// 			comparisons: false,
+		// 			ecma: 6
+		// 		}
+		// 	}
+		// })
 	]
 };
