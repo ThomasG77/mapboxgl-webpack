@@ -2,7 +2,7 @@ import mapboxgl from 'mapbox-gl';
 import './style.css';
 import './../node_modules/mapbox-gl/dist/mapbox-gl.css';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoibWlrZXdpbGxpYW1zb24iLCJhIjoibzRCYUlGSSJ9.QGvlt6Opm5futGhE5i-1kw';
+mapboxgl.accessToken = 'pk.eyJ1IjoidGhvbWFzZzc3IiwiYSI6Im5Yc3p3SW8ifQ.FtzS4C8q_UJpOhrVnJfQfg';
 
 // Instanciate a map object
 var map = new mapboxgl.Map({
