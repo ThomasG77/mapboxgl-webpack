@@ -10,7 +10,6 @@ const path = require('path');
  */
 
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const BabiliPlugin = require("babili-webpack-plugin");
 
 /*
  * We've enabled commonsChunkPlugin for you. This allows your app to
@@ -20,17 +19,6 @@ const BabiliPlugin = require("babili-webpack-plugin");
  * https://webpack.js.org/plugins/commons-chunk-plugin/
  *
  */
-
-/*
- * We've enabled ExtractTextPlugin for you. This allows your app to
- * use css modules that will be moved into a separate CSS file instead of inside
- * one of your module entries!
- *
- * https://github.com/webpack-contrib/extract-text-webpack-plugin
- *
- */
-
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: {
@@ -56,11 +44,6 @@ module.exports = {
 			},
 			{
 				test: /\.css$/,
-				// use: ExtractTextPlugin.extract({
-				// 	fallback: "style-loader",
-				// 	use: "css-loader"
-				// })
-
 				use: [
 					'style-loader',
 					'css-loader'
@@ -70,15 +53,12 @@ module.exports = {
 	},
 
 	plugins: [
-		// new ExtractTextPlugin("styles.css"),
-		// new BabiliPlugin()
-		// new UglifyJSPlugin({
-		// 	uglifyOptions: {
-		// 		compress: {
-		// 			comparisons: false,
-		// 			ecma: 6
-		// 		}
-		// 	}
-		// })
+		new UglifyJSPlugin({
+			sourceMap: true,
+			compress: {
+				warnings: false,
+				comparisons: false,	// don't optimize comparisons
+			}
+		})
 	]
 };

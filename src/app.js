@@ -1,6 +1,6 @@
 import mapboxgl from 'mapbox-gl';
 import './style.css';
-import '!css-loader!mapbox-gl/dist/mapbox-gl.css';
+import './../node_modules/mapbox-gl/dist/mapbox-gl.css';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibWlrZXdpbGxpYW1zb24iLCJhIjoibzRCYUlGSSJ9.QGvlt6Opm5futGhE5i-1kw';
 
