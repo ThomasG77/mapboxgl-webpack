@@ -35,7 +35,8 @@ module.exports = {
 		rules: [
 			{
 				test: /\.js$/,
-				exclude: /node_modules/,
+				// exclude: /node_modules/,
+				exclude: /node_modules(?!\/webpack-dev-server)/,
 				loader: 'babel-loader',
 
 				options: {
